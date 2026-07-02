@@ -1,19 +1,18 @@
-import React from "react";
+import React from 'react';
 
-function ColourSelector({ colours, onColourChange }) {
+const ColourSelector = (props) => {
+  const { config, selectNextBackground } = props;
+  const { label, classname, background } = config;
+
   return (
-    <div>
-      {colours.map((item) => (
-        <button
-          key={item.id}
-          onClick={() => onColourChange(item.colour)}
-          style={{ backgroundColor: item.colour, margin: "5px", padding: "8px 16px" }}
-        >
-          {item.colour}
-        </button>
-      ))}
-    </div>
+    <button 
+      className={classname} 
+      onClick={() => selectNextBackground({ background: background })}
+      data-testid={config.key} // Optional, depending on test suite requirements
+    >
+      {label}
+    </button>
   );
-}
+};
 
 export default ColourSelector;
