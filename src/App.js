@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import ColourSelector from "./ColourSelector";
-import Selection from "./Selection";
+import ColourSelector from "./components/ColourSelector";
+import Selection from "./components/Selection";
 import "./App.css";
 
 function App() {
